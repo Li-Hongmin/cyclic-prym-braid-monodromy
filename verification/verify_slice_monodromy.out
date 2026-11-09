@@ -1,0 +1,57 @@
+Running finite and symbolic verification suite for symmetric cyclic Prym slices...
+
+==============================================================================
+CHECK 1: Section 2 (Lemma 2.1 & Theorem A(1)) — Puncture Generators & Ranks
+==============================================================================
+  [PASS] Symbolic characteristic polynomials of g_1(t), g_0(t), g_{-1}(t), g_infty(t) match Lemma 2.1.
+  [PASS] Symbolic bisection identities for g_0(t) and g_infty(t) verified.
+  [PASS] Finite rank >= 2 & absence of rank-1 pseudoreflections verified for N = 7, 11, 13.
+
+==============================================================================
+CHECK 2: Sections 2.3 & 3 (Prop 2.2, Lemma 3.1, Thm 3.2) — J(t) & Adjoint sl_4
+==============================================================================
+  [PASS] Skew-Hermitian symmetry H(b)* = -H(b) verified symbolically.
+  [PASS] Monodromy invariance g^* J(t) g = J(t) verified symbolically for g_1, g_0.
+  [PASS] Leading principal minor formula (Eq. 2.6) verified symbolically for k = 1, 2, 3, 4.
+  [PASS] Lemma 3.1 diagonalization C^{-1} g_1 C, entries of M (Eq. 3.5), and 2x2 minors (Eq. 3.7) verified.
+  [PASS] P_{2..5} != 1, |Spec(Ad g_1)| = 7, and signature distributions verified for all 23 Table 9.1 conductors.
+
+==============================================================================
+CHECK 3: Section 4 (Lemma 4.1 & Theorem B(1)) — Trace Formula & Galois Means
+==============================================================================
+  [PASS] Lemma 4.1 trace formula (Eq. 4.1) and determinant verified symbolically.
+  [PASS] Chebyshev-Laurent polynomials M_prim(u) (Eq. 1.10) & M_comp(u) (Eq. 1.11) verified symbolically.
+  [PASS] All exact rational Galois means in Table 9.1 confirmed.
+  [PASS] Universal inequalities M_prim(N) >= 21 > 16 and M_comp(N>7) >= 86/5 > 16 verified for all 79 N in [7, 300].
+  [PASS] Companion N=7 cyclotomic identity |tr(W)|^2 = 20.591794 > 16 verified.
+
+==============================================================================
+CHECK 4: Section 5 (Lemma 5.1 & Theorem B(2)) — Dual B_15 Length-3 Separation
+==============================================================================
+  [PASS] Lemma 5.1 trace & determinant formulas for g_1 g_0 and g_1^2 g_0 (Eq. 5.1) verified symbolically.
+  [PASS] Laurent polynomial factorizations (Eqs. 5.9-5.10) verified symbolically.
+  [PASS] Full length-3 separation by W_1 = g_1^2 g_0 confirmed for all 23 Table 9.1 conductors (Primary & Companion).
+
+==============================================================================
+CHECK 5: Section 6 (Theorem C / Theorem 6.1) — Local-Collision Multipliers
+==============================================================================
+  [PASS] Trace of g_1 g_{-1} is independent of b_3 and satisfies exact conjugate symmetry (Eq. 6.3).
+  [PASS] Binomial factorizations (Eqs. 6.6-6.8) verified symbolically.
+  [PASS] All 8 representative (a, m') pairs in Table 9.2 verified (length-2 collision + length-3 separation).
+
+==============================================================================
+CHECK 6: Section 7 (Theorem D(1)-(2)) — Three-Factor CRT Family & 4 Obstructions
+==============================================================================
+  [PASS] Pure-tensor Laurent factorizations F_{--}, F_{+-}, F_{-+} (Eq. 7.18) verified symbolically.
+  [PASS] Degree-6 minimal polynomial (Eq. 7.8), exact rational cubic bounds for X_1, X_2, X_3, and |tr(W(92))|^2 = 19.227760 > 48043/2500 = 19.2172 > 16 verified.
+  [PASS] All Theorem D(1) triples in Table 9.2 verified (Galois means, P_{2..5}!=1, |Spec(Ad g1)|=7, 100% length-3 separation).
+  [PASS] All 4 sharpness counterexamples (b.1)-(b.4) (including sl_4 multiplicities 7,4,4 at N=3) and Corollary E(3) determinant identity confirmed.
+
+==============================================================================
+CHECK 7: 100% Floating-Point-Free Exact Cyclotomic Ring Certificates (Tables 9.1 & 9.2)
+==============================================================================
+  [PASS] All 23 Table 9.1 conductors (Primary & Companion) and all 12 Table 9.2 triples verified by full exact cyclotomic tensor-ring coordinate separation.
+
+==============================================================================
+OVERALL VERDICT: ALL CHECKS PASSED (7/7)
+==============================================================================

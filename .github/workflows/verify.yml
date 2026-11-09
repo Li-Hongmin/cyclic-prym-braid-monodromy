@@ -1,0 +1,33 @@
+name: verify
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Python dependencies
+        run: pip install sympy==1.14.0
+      - name: Prepare a fresh working copy
+        run: cp -r verification work
+      - name: SHA-256 check of the supplement
+        working-directory: work
+        run: sha256sum -c --quiet CONTENTS.sha256
+      - name: "Slice monodromy computations"
+        working-directory: work
+        env: {OPENBLAS_NUM_THREADS: '1', OMP_NUM_THREADS: '1'}
+        run: |
+          set -eo pipefail
+          python verify_slice_monodromy.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verification-output
+          path: work/
+          retention-days: 14
